@@ -9,6 +9,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<title>Create a CV</title>
 
 	<style type="text/css">
+		form {
+			margin: auto;
+			width: 850px;
+			font-size: medium;
+			justify-content: center;
+			padding: 10px;
+		}
+
+		.ab {
+			display: flex;
+		}
+
+		.abc {
+			padding-left: 30%;
+			/* text-align: center;
+			justify-content: center; */
+		}
+
+
+
 		::selection {
 			background-color: #E13300;
 			color: white;
@@ -106,30 +126,140 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<center>FORM</center>
 			</h1>
 			<form id="user_form" name="user_form">
-				<fieldset>
-					<label>Full name:</label>
-					<input type="text" name="name" id="name">
-					<br /><br />
-					<label>First name:</label>
-					<input type="text" name="fname" id="fname">
-					<br /><br />
-					<label>Last name:</label>
-					<input type="text" name="lname" id="lname">
-					<br /><br />
-					<label>Age:</label>
-					<input type="text" name="age" id="age">
+				<div class="ab">
+					<fieldset>
+						<legend>Personal Info</legend>
 
-				</fieldset>
+						<label>First name:</label><br />
+						<input type="text" name="fname" id="fname" size="50">
+						<br />
+						<label>Last name:</label><br />
+						<input type="text" name="lname" id="lname" size="50">
+						<br />
+						<label>Profession:</label><br />
+						<input type="text" name="prof" id="prof" size="50">
+						<br />
+						<label>City:</label><br />
+						<input type="text" name="city" id="city" size="50">
+						<br />
+						<label>Country:</label><br />
+						<input type="text" name="country" id="country" size="50">
+						<br />
+						<label>Email:</label><br />
+						<input type="text" name="mail" id="mail" size="50">
+						<br />
+						<label>Mobile:</label><br />
+						<input type="text" name="mobile" id="mobile" size="50">
+
+					</fieldset>
+					<fieldset>
+						<legend>Skills</legend>
+						<label> Enter the skills you have (max 5): </label>
+						<br />
+
+						<input type="text" name="sk1" id="sk1" placeholder="Skill 1">
+						<label>Percentage: </label>
+						<input type="number" name="per1" id="per1" min="0" max="100"> <br /><br />
+
+						<input type="text" name="sk2" id="sk2" placeholder="Skill 2">
+						<label>Percentage: </label>
+						<input type="number" name="per2" id="per2" min="0" max="100"> <br /><br />
+
+						<input type="text" name="sk3" id="sk3" placeholder="Skill 3">
+						<label>Percentage: </label>
+						<input type="number" name="per3" id="per3" min="0" max="100"> <br /><br />
+
+						<input type="text" name="sk4" id="sk4" placeholder="Skill 4">
+						<label>Percentage: </label>
+						<input type="number" name="per4" id="per4" min="0" max="100"> <br /><br />
+
+						<input type="text" name="sk5" id="sk5" placeholder="Skill 5">
+						<label>Percentage: </label>
+						<input type="number" name="per5" id="per5" min="0" max="100"> <br />
+					</fieldset>
+				</div>
+				<div class="ab">
+					<fieldset>
+						<legend>Languages</legend>
+						<label> Enter the languages (max 3): </label>
+						<br /><br />
+
+						<input type="text" name="la1" id="la1" placeholder="Language 1">
+						<label>Percentage: </label>
+						<input type="number" name="pe1" id="pe1" min="0" max="100"> <br /><br />
+
+						<input type="text" name="la2" id="la2" placeholder="Language 2">
+						<label>Percentage: </label>
+						<input type="number" name="pe2" id="per2" min="0" max="100"> <br /><br />
+
+						<input type="text" name="la3" id="la3" placeholder="Language 3">
+						<label>Percentage: </label>
+						<input type="number" name="pe3" id="pe3" min="0" max="100"> <br /><br />
+
+					</fieldset>
+
+
+					<fieldset>
+						<legend>Work Experience</legend>
+						<label> Enter work experiences you have (max 2): </label>
+						<br /><br />
+
+						<div>
+							<label>Title: </label>
+							<input type="text" name="wo1" id="wo1" placeholder="Ex: Web developer"><br />
+							<label>From: </label>
+							<input type="date" name="from1" id="from1">
+							<label>To: </label>
+							<input type="date" name="to1" id="to1"><br />
+							<textarea rows="2" cols="50" name="des1" id="des1">More details</textarea> <br /><br />
+						</div>
+						<div>
+							<label>Title: </label>
+							<input type="text" name="wo2" id="wo2" placeholder="Ex: Web developer"><br />
+							<label>From: </label>
+							<input type="date" name="from2" id="from2">
+							<label>To: </label>
+							<input type="date" name="to2" id="to2"><br />
+							<textarea rows="2" cols="50" name="des2" id="des2">More details</textarea>
+						</div>
+
+
+					</fieldset>
+				</div>
+
 				<fieldset>
-					<title>Qual</title>
-					<label>Education qualification:</label>
-					<input type="text" name="edu" id="edu">
+					<div class="abc">
+						<legend>Education Qualification (max 2)</legend>
+
+						<div>
+							<label>University, College, School: </label>
+							<input type="text" name="uni1" id="uni1" placeholder="Ex: ITUM"><br />
+							<label>From: </label>
+							<input type="date" name="fro1" id="fro1">
+							<label>To: </label>
+							<input type="date" name="t1" id="t1"><br />
+							<textarea rows="2" cols="50" name="de1" id="de1">More details</textarea> <br /><br />
+						</div>
+						<div>
+							<label>University, College, School: </label>
+							<input type="text" name="uni2" id="uni2" placeholder="Ex: ITUM"><br />
+							<label>From: </label>
+							<input type="date" name="fro2" id="fro2">
+							<label>To: </label>
+							<input type="date" name="t2" id="t2"><br />
+							<textarea rows="2" cols="50" name="de2" id="de2">More details</textarea> <br /><br />
+						</div>
+					</div>
 				</fieldset>
+
+
 				<fieldset>
-					<input type="button" name="generate" id="generate" value="Generate" />
+					<center><input type="button" name="generate" id="generate" value="Generate" /></center>
 				</fieldset>
+
 			</form>
-			<!-- <a href="<?php //echo base_url('index.php/Welcome/downloadPdf'); ?>" target="_blank">Download</a> -->
+			<!-- <a href="<?php //echo base_url('index.php/Welcome/downloadPdf'); 
+							?>" target="_blank">Download</a> -->
 
 
 		</div>
@@ -149,8 +279,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				method: 'post',
 				success: function(response) {
 					console.log(response);
-					window.location = base_url + "index.php/Welcome/downloadPdf";
-					
+					// window.location = base_url + "index.php/Welcome/downloadPdf";
+
 				},
 				error: function() {
 					alert("Something Wrong");
