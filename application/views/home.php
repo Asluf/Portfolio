@@ -129,7 +129,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="ab">
 					<fieldset>
 						<legend>Personal Info</legend>
-
+						<label>NIC Number:</label><br />
+						<input type="text" name="nic" id="nic" size="50">
+						<br />
 						<label>First name:</label><br />
 						<input type="text" name="fname" id="fname" size="50">
 						<br />
@@ -258,8 +260,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</fieldset>
 
 			</form>
-			<!-- <a href="<?php //echo base_url('index.php/Welcome/downloadPdf'); 
-							?>" target="_blank">Download</a> -->
+			<center><a id="genbtn" style="display:none;margin-bottom:20px;" href="<?php echo base_url('index.php/Welcome/downloadPdf/');
+						?>" target="_blank"><button>Download</button></a></center>
 
 
 		</div>
@@ -278,7 +280,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				data: $("#user_form").serialize(),
 				method: 'post',
 				success: function(response) {
-					console.log(response);
+					document.getElementById('genbtn').style.display='block';
+					document.getElementById('genbtn').innerHTML = response;
 					// window.location = base_url + "index.php/Welcome/downloadPdf";
 
 				},
