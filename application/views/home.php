@@ -237,7 +237,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<label>University, College, School: </label>
 							<input type="text" name="uni1" id="uni1" placeholder="Ex: ITUM"><br />
 							<label>From: </label>
-							<input type="date" name="fro1" id="fro1">
+							<input type="date" name="f1" id="f1">
 							<label>To: </label>
 							<input type="date" name="t1" id="t1"><br />
 							<textarea rows="2" cols="50" name="de1" id="de1">More details</textarea> <br /><br />
@@ -246,7 +246,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<label>University, College, School: </label>
 							<input type="text" name="uni2" id="uni2" placeholder="Ex: ITUM"><br />
 							<label>From: </label>
-							<input type="date" name="fro2" id="fro2">
+							<input type="date" name="f2" id="f2">
 							<label>To: </label>
 							<input type="date" name="t2" id="t2"><br />
 							<textarea rows="2" cols="50" name="de2" id="de2">More details</textarea> <br /><br />
@@ -261,13 +261,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 			</form>
 			<center><a id="genbtn" style="display:none;margin-bottom:20px;" href="<?php echo base_url('index.php/Welcome/downloadPdf/');
-						?>" target="_blank"><button>Download</button></a></center>
+																					?>" target="_blank"><button>Download</button></a></center>
 
 
 		</div>
 
 	</div>
 	<script src="<?php echo base_url(); ?>resources/js/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <script>
 	$(document).ready(function() {
@@ -280,9 +281,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				data: $("#user_form").serialize(),
 				method: 'post',
 				success: function(response) {
-					document.getElementById('genbtn').style.display='block';
-					document.getElementById('genbtn').innerHTML = response;
-					// window.location = base_url + "index.php/Welcome/downloadPdf";
+					if (response != "error") {
+						document.getElementById('genbtn').style.display = 'block';
+						console.log(<?php echo $_SESSION['nic']; ?>);
+						
+						Swal.fire({
+							title: 'Do you want to save the changes?',
+							showCancelButton: true,
+							confirmButtonText: 'Preview & Download',
+
+						}).then((result) => {
+							/* Read more about isConfirmed, isDenied below */
+							if (result.isConfirmed) {
+								window.location = base_url + "index.php/Welcome/downloadPdf/"+<?php echo $_SESSION['nic']; ?>;
+							}
+						});
+					} else {
+						alert("Something went wrong");
+					}
+
 
 				},
 				error: function() {

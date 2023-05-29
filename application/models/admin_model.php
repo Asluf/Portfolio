@@ -5,11 +5,20 @@ class admin_model extends CI_MODEL
     {
         $query = $this->db->get_where('personal', array('nic' => $data['nic']));
         if ($query->num_rows() > 0) {
-            $this->db->delete_where('personal', array('nic' => $data['nic']));
-            $this->db->delete_where('skill', array('nic' => $data['nic']));
-            $this->db->delete_where('language', array('nic' => $data['nic']));
-            $this->db->delete_where('work', array('nic' => $data['nic']));
-            $this->db->delete_where('university', array('nic' => $data['nic']));
+            $this->db->where('nic',$data['nic']);
+            $this->db->delete('personal');
+
+            $this->db->where('nic',$data['nic']);
+            $this->db->delete('skill');
+
+            $this->db->where('nic',$data['nic']);
+            $this->db->delete('language');
+
+            $this->db->where('nic',$data['nic']);
+            $this->db->delete('work');
+
+            $this->db->where('nic',$data['nic']);
+            $this->db->delete('university');
         }
 
         $personal = array(
@@ -58,11 +67,11 @@ class admin_model extends CI_MODEL
         $unis = array(
             "nic" => $data["nic"],
             "uni1" => $data["uni1"],
-            "fro1" => $data["fro1"],
+            "f1" => $data["f1"],
             "t1" => $data["t1"],
             "de1" => $data["de1"],
             "uni2" => $data["uni2"],
-            "fro2" => $data['fro2'],
+            "f2" => $data['f2'],
             "t2" => $data["t2"],
             "de2" => $data["de2"]
 
@@ -77,19 +86,46 @@ class admin_model extends CI_MODEL
                     $r4 = $this->db->insert('work', $works);
                     if($r4){
                         $r5 = $this->db->insert('university', $unis);
-                        return $data['nic'];
+                        $_SESSION['nic'] = $data['nic'];
+                        echo $data['nic'];
                     }else{
-                        return "error";
+                        echo "error";
                     }
                 }else{
-                    return "error";
+                    echo "error";
                 }
             }
             else{
-                return "error";
+                echo "error";
             }
         }else{
-            return "error";
+            echo "error";
         }
+    }
+
+    public function get_personal($data)
+    {
+        $query = $this->db->get_where('personal', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_skill($data)
+    {
+        $query = $this->db->get_where('skill', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_language($data)
+    {
+        $query = $this->db->get_where('language', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_work($data)
+    {
+        $query = $this->db->get_where('work', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_uni($data)
+    {
+        $query = $this->db->get_where('university', array('nic' => $data));
+        return $query->result_array();
     }
 }
