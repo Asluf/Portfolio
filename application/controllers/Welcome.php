@@ -2,7 +2,12 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Welcome extends CI_Controller
-{
+{ 
+  public function test(){
+      echo "Welcome";
+      require_once(APPPATH . 'helpers/tcpdf/tcpdf.php');
+
+  }
 
   public function index()
   {
