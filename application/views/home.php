@@ -282,8 +282,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				method: 'post',
 				success: function(response) {
 					if (response != "error") {
-						document.getElementById('genbtn').style.display = 'block';
-						console.log(<?php echo $_SESSION['nic']; ?>);
+						// document.getElementById('genbtn').style.display = 'block';
 						
 						Swal.fire({
 							title: 'Do you want to save the changes?',
@@ -293,7 +292,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						}).then((result) => {
 							/* Read more about isConfirmed, isDenied below */
 							if (result.isConfirmed) {
-								window.location = base_url + "index.php/Welcome/downloadPdf/"+<?php echo $_SESSION['nic']; ?>;
+								window.location = base_url + "index.php/Welcome/downloadPdf/"+response;
+								
 							}
 						});
 					} else {
