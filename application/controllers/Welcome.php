@@ -2,11 +2,11 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Welcome extends CI_Controller
-{ 
-  public function test(){
-      echo "Welcome";
-      require_once(APPPATH . 'helpers/tcpdf/tcpdf.php');
-
+{
+  public function test()
+  {
+    echo "Welcome";
+    require_once(APPPATH . 'helpers/tcpdf/tcpdf.php');
   }
 
   public function index()
@@ -18,9 +18,13 @@ class Welcome extends CI_Controller
   {
     $this->load->model('admin_model');
     $res = $this->admin_model->insertData($this->input->post());
-    
   }
-  public function downloadPdf($id)
+  public function chooseTem($x)
+  { 
+    $data['id'] = $x;
+    $this->load->view('template',$data);
+  }
+  public function downloadPdf1($id)
   {
     $this->load->model('admin_model');
     $pers = $this->admin_model->get_personal($id);
@@ -45,41 +49,36 @@ class Welcome extends CI_Controller
     $pdf->setTitle('Curriculum Vitae');
     $pdf->AddPage();
 
-    
+
     $html = "<h1>Welcome to <a href='http://www.tcpdf.org' style='text-decoration:none;background-color:#CC0000;color:black;'>&nbsp;<span style='color:black;'>TC</span><span style='color:white;'>PDF</span>&nbsp;</a>!</h1>
-<i>This is the first example of TCPDF library.</i>
-<p>This text is printed using the <i>writeHTMLCell()</i> method but you can also use: <i>Multicell(), writeHTML(), Write(), Cell() and Text()</i>.</p>
-<p>Please check the source code documentation and other examples for further information.</p>
-<p style='color:#CC0000;'>TO IMPROVE AND EXPAND TCPDF I NEED YOUR SUPPORT, PLEASE <a href='http://sourceforge.net/donate/index.php?group_id=128076'>MAKE A DONATION!</a></p>";
+    <i>This is the first example of TCPDF library.</i>
+    <p>This text is printed using the <i>writeHTMLCell()</i> method but you can also use: <i>Multicell(), writeHTML(), Write(), Cell() and Text()</i>.</p>
+    <p>Please check the source code documentation and other examples for further information.</p>
+    <p style='color:#CC0000;'>TO IMPROVE AND EXPAND TCPDF I NEED YOUR SUPPORT, PLEASE <a href='http://sourceforge.net/donate/index.php?group_id=128076'>MAKE A DONATION!</a></p>";
 
 
 
-    $w3 ="<body>
+    $w3 = "<body>
       <div>
         <div>
-          <h2 style='color:red;'>". $pers[0]['fname']  ."</h2>
+          <h2 style='color:red;'>" . $pers[0]['fname']  . "</h2>
           <div>
             <ul>
-              <li>". $pers[0]['prof']  ."</li>
-              <li>". $pers[0]['city']  .', '. $pers[0]['country']  ."</li>
-              <li>". $pers[0]['mail']  ."</li>
-              <li>". $pers[0]['mobile']  ."</li>
+              <li>" . $pers[0]['prof']  . "</li>
+              <li>" . $pers[0]['city']  . ', ' . $pers[0]['country']  . "</li>
+              <li>" . $pers[0]['mail']  . "</li>
+              <li>" . $pers[0]['mobile']  . "</li>
             </ul>
             <hr />
 
             <p>
               <b>Skills</b>
             </p>
-            <p>". $skill[0]['sk1'] ."</p>
-            <div style='width: 90%'>". $skill[0]['per1'] ."</div>
-            <p>". $skill[0]['sk2'] ."</p>
-            <div style='width: 80%'>". $skill[0]['per2'] ."</div>
-            <p>". $skill[0]['sk3'] ."</p>
-            <div style='width: 75%'>". $skill[0]['per3'] ."</div>
-            <p>". $skill[0]['sk4'] ."</p>
-            <div style='width: 50%'>". $skill[0]['per4'] ."</div>
-            <p>". $skill[0]['sk5'] ."</p>
-            <div style='width: 50%'>". $skill[0]['per5'] ."</div>
+            <p>" . $skill[0]['sk1'] . "</p>
+            <p>" . $skill[0]['sk2'] . "</p>
+            <p>" . $skill[0]['sk3'] . "</p>
+            <p>" . $skill[0]['sk4'] . "</p>
+            <p>" . $skill[0]['sk5'] . "</p>
 
             <br />
 
@@ -87,9 +86,9 @@ class Welcome extends CI_Controller
               <b>Languages</b>
             </p>
             <ul>
-              <li>". $lang[0]['la1'] ."</li>
-              <li>". $lang[0]['la2'] ."</li>
-              <li>". $lang[0]['la3'] ."</li>
+              <li>" . $lang[0]['la1'] . "</li>
+              <li>" . $lang[0]['la2'] . "</li>
+              <li>" . $lang[0]['la3'] . "</li>
             </ul>
             
             <br />
@@ -165,7 +164,7 @@ class Welcome extends CI_Controller
 
       
    
-  </body>";
+    </body>";
 
     $pdf->writeHTMLCell(0, 0, '', '', $w3, 0, 1, 0, true, '', true);
 

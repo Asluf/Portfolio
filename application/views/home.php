@@ -155,53 +155,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					</fieldset>
 					<fieldset>
-						<legend>Skills</legend>
-						<label> Enter the skills you have (max 5): </label>
-						<br />
-
-						<input type="text" name="sk1" id="sk1" placeholder="Skill 1">
-						<label>Percentage: </label>
-						<input type="number" name="per1" id="per1" min="0" max="100"> <br /><br />
-
-						<input type="text" name="sk2" id="sk2" placeholder="Skill 2">
-						<label>Percentage: </label>
-						<input type="number" name="per2" id="per2" min="0" max="100"> <br /><br />
-
-						<input type="text" name="sk3" id="sk3" placeholder="Skill 3">
-						<label>Percentage: </label>
-						<input type="number" name="per3" id="per3" min="0" max="100"> <br /><br />
-
-						<input type="text" name="sk4" id="sk4" placeholder="Skill 4">
-						<label>Percentage: </label>
-						<input type="number" name="per4" id="per4" min="0" max="100"> <br /><br />
-
-						<input type="text" name="sk5" id="sk5" placeholder="Skill 5">
-						<label>Percentage: </label>
-						<input type="number" name="per5" id="per5" min="0" max="100"> <br />
-					</fieldset>
-				</div>
-				<div class="ab">
-					<fieldset>
-						<legend>Languages</legend>
-						<label> Enter the languages (max 3): </label>
-						<br /><br />
-
-						<input type="text" name="la1" id="la1" placeholder="Language 1">
-						<label>Percentage: </label>
-						<input type="number" name="pe1" id="pe1" min="0" max="100"> <br /><br />
-
-						<input type="text" name="la2" id="la2" placeholder="Language 2">
-						<label>Percentage: </label>
-						<input type="number" name="pe2" id="per2" min="0" max="100"> <br /><br />
-
-						<input type="text" name="la3" id="la3" placeholder="Language 3">
-						<label>Percentage: </label>
-						<input type="number" name="pe3" id="pe3" min="0" max="100"> <br /><br />
-
-					</fieldset>
-
-
-					<fieldset>
 						<legend>Work Experience</legend>
 						<label> Enter work experiences you have (max 2): </label>
 						<br /><br />
@@ -226,6 +179,54 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 
 
+					</fieldset>
+
+				</div>
+				<div class="ab">
+					<fieldset>
+						<legend>Languages</legend>
+						<label> Enter the languages (max 3): </label>
+						<br /><br />
+						<label>Language 1: </label>
+						<input type="text" name="la1" id="la1" placeholder="Language 1"><br />
+
+						<!-- <input type="number" name="pe1" id="pe1" min="0" max="100"> <br /><br /> -->
+						<label>Language 2: </label>
+						<input type="text" name="la2" id="la2" placeholder="Language 2"><br />
+
+						<!-- <input type="number" name="pe2" id="per2" min="0" max="100"> <br /><br /> -->
+						<label>Language 3: </label>
+						<input type="text" name="la3" id="la3" placeholder="Language 3"><br />
+
+						<!-- <input type="number" name="pe3" id="pe3" min="0" max="100"> <br /><br /> -->
+
+					</fieldset>
+
+
+					<fieldset>
+						<legend>Skills</legend>
+						<label> Enter the skills you have (max 5): </label>
+						<br />
+						<label>Skill 1: </label>
+						<input type="text" name="sk1" id="sk1" placeholder="Skill 1">
+						<br />
+						<!-- <input type="number" name="per1" id="per1" min="0" max="100"> <br /><br /> -->
+						<label>Skill 2: </label>
+						<input type="text" name="sk2" id="sk2" placeholder="Skill 2">
+						<br />
+						<!-- <input type="number" name="per2" id="per2" min="0" max="100"> <br /><br /> -->
+						<label>Skill 3: </label>
+						<input type="text" name="sk3" id="sk3" placeholder="Skill 3">
+						<br />
+						<!-- <input type="number" name="per3" id="per3" min="0" max="100"> <br /><br /> -->
+						<label>Skill 4: </label>
+						<input type="text" name="sk4" id="sk4" placeholder="Skill 4">
+						<br />
+						<!-- <input type="number" name="per4" id="per4" min="0" max="100"> <br /><br /> -->
+						<label>Skill 5: </label>
+						<input type="text" name="sk5" id="sk5" placeholder="Skill 5">
+
+						<!-- <input type="number" name="per5" id="per5" min="0" max="100"> <br /> -->
 					</fieldset>
 				</div>
 
@@ -260,8 +261,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</fieldset>
 
 			</form>
-			<center><a id="genbtn" style="display:none;margin-bottom:20px;" href="<?php echo base_url('index.php/Welcome/downloadPdf/');
-																					?>" target="_blank"><button>Download</button></a></center>
+			<!-- <center><a id="genbtn" style="display:none;margin-bottom:20px;" href="<?php //echo base_url('index.php/Welcome/downloadPdf/');
+																						?>" target="_blank"><button>Download</button></a></center> -->
 
 
 		</div>
@@ -283,17 +284,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				success: function(response) {
 					if (response != "error") {
 						// document.getElementById('genbtn').style.display = 'block';
-						
+
 						Swal.fire({
-							title: 'Do you want to save the changes?',
+							title: 'Your information has been saved! ',
 							showCancelButton: true,
 							confirmButtonText: 'Preview & Download',
 
 						}).then((result) => {
 							/* Read more about isConfirmed, isDenied below */
 							if (result.isConfirmed) {
-								window.location = base_url + "index.php/Welcome/downloadPdf/"+response;
-								
+								// window.location = base_url + "index.php/Welcome/downloadPdf/" + response;
+								window.location = base_url + "index.php/Welcome/chooseTem/" + response;
+
 							}
 						});
 					} else {

@@ -34,24 +34,24 @@ class admin_model extends CI_MODEL
         $skills = array(
             "nic" => $data["nic"],
             "sk1" => $data['sk1'],
-            "per1" => $data["per1"],
+            // "per1" => $data["per1"],
             "sk2" => $data["sk2"],
-            "per2" => $data["per2"],
+            // "per2" => $data["per2"],
             "sk3" => $data["sk3"],
-            "per3" => $data["per3"],
+            // "per3" => $data["per3"],
             "sk4" => $data["sk4"],
-            "per4" => $data["per4"],
-            "sk5" => $data["sk5"],
-            "per5" => $data["per5"],
+            // "per4" => $data["per4"],
+            "sk5" => $data["sk5"]
+            // "per5" => $data["per5"],
         );
         $languages = array(
             "nic" => $data["nic"],
             "la1" => $data['la1'],
-            "pe1" => $data["pe1"],
+            // "pe1" => $data["pe1"],
             "la2" => $data["la2"],
-            "pe2" => $data["pe2"],
+            // "pe2" => $data["pe2"],
             "la3" => $data["la3"],
-            "pe3" => $data["pe3"],
+            // "pe3" => $data["pe3"],
         );
         $works = array(
             "nic" => $data["nic"],
