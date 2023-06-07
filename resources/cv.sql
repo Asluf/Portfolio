@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2023 at 10:04 AM
+-- Generation Time: Jun 07, 2023 at 02:33 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -31,11 +31,11 @@ CREATE TABLE `language` (
   `id` int(11) NOT NULL,
   `nic` varchar(15) NOT NULL,
   `la1` varchar(20) NOT NULL,
-  `pe1` varchar(20) NOT NULL,
+  `pe1` varchar(20) DEFAULT NULL,
   `la2` varchar(20) NOT NULL,
-  `pe2` varchar(20) NOT NULL,
+  `pe2` varchar(20) DEFAULT NULL,
   `la3` varchar(20) NOT NULL,
-  `pe3` varchar(20) NOT NULL
+  `pe3` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,7 +43,9 @@ CREATE TABLE `language` (
 --
 
 INSERT INTO `language` (`id`, `nic`, `la1`, `pe1`, `la2`, `pe2`, `la3`, `pe3`) VALUES
-(13, '200100402750', 'English', '87', 'Sinhala', '99', 'Tamil', '100');
+(17, '255699745623', 'Englisj', NULL, 'Telugu', NULL, 'Arabic', NULL),
+(18, '200100402750', 'English', NULL, 'Spanish', NULL, 'Arabic', NULL),
+(19, '200100402755', 'Spanish', NULL, 'English', NULL, 'Chinese', NULL);
 
 -- --------------------------------------------------------
 
@@ -60,15 +62,18 @@ CREATE TABLE `personal` (
   `city` varchar(20) NOT NULL,
   `country` varchar(25) NOT NULL,
   `mail` varchar(50) NOT NULL,
-  `mobile` varchar(15) NOT NULL
+  `mobile` varchar(15) NOT NULL,
+  `about_me` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `personal`
 --
 
-INSERT INTO `personal` (`id`, `nic`, `fname`, `lname`, `prof`, `city`, `country`, `mail`, `mobile`) VALUES
-(13, '200100402750', 'Mohamed', 'Ahamed', 'Developer', 'Colombo', 'Sri lanka', 'moh@gmail.com', '0711191193');
+INSERT INTO `personal` (`id`, `nic`, `fname`, `lname`, `prof`, `city`, `country`, `mail`, `mobile`, `about_me`) VALUES
+(17, '255699745623', 'Abdul', 'Kaiyoom', 'Sft eng', 'Manchester', 'Nepal', 'abd@gmail.com', '0775444988', 'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in                    deserunt aspernatur est reprehenderit sunt hic. Nulla tempora                    soluta ea et odio, unde doloremque repellendus iure, iste werty ertg wertyu wertyu asdfrtghyuj.'),
+(18, '200100402750', 'Abd', 'Villam', 'Cricketer', 'Manhatton', 'Norway', 'abd@gmail.com', '0007895623', 'Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in                    deserunt aspernatur est reprehenderit sunt hic. Nulla tempora                    soluta ea et odio, unde doloremque repellendus iure, iste werty ertg wertyu wertyu asdfrtghyuj.'),
+(19, '200100402755', 'John', 'dee', 'Data engineer', 'Newyork', 'USA', 'jhon@gmail.com', '0015896325', 'A highly skilled and results-driven data engineer with 2 years of experience in designing, building, and optimizing data infrastructure and pipelines. Proficient in leveraging cutting-edge technologies and frameworks to extract, transform, and load (ETL) data, and in developing scalable and robust data solutions. Possessing a strong understanding of data modeling, data warehousing, and data integration techniques.');
 
 -- --------------------------------------------------------
 
@@ -79,16 +84,16 @@ INSERT INTO `personal` (`id`, `nic`, `fname`, `lname`, `prof`, `city`, `country`
 CREATE TABLE `skill` (
   `id` int(11) NOT NULL,
   `nic` varchar(15) NOT NULL,
-  `sk1` varchar(20) NOT NULL,
-  `per1` varchar(20) NOT NULL,
-  `sk2` varchar(20) NOT NULL,
-  `per2` varchar(20) NOT NULL,
-  `sk3` varchar(20) NOT NULL,
-  `per3` varchar(20) NOT NULL,
-  `sk4` varchar(20) NOT NULL,
-  `per4` varchar(20) NOT NULL,
-  `sk5` varchar(20) NOT NULL,
-  `per5` varchar(20) NOT NULL
+  `sk1` varchar(30) NOT NULL,
+  `per1` varchar(20) DEFAULT NULL,
+  `sk2` varchar(30) NOT NULL,
+  `per2` varchar(20) DEFAULT NULL,
+  `sk3` varchar(30) NOT NULL,
+  `per3` varchar(20) DEFAULT NULL,
+  `sk4` varchar(30) NOT NULL,
+  `per4` varchar(20) DEFAULT NULL,
+  `sk5` varchar(30) NOT NULL,
+  `per5` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -96,7 +101,9 @@ CREATE TABLE `skill` (
 --
 
 INSERT INTO `skill` (`id`, `nic`, `sk1`, `per1`, `sk2`, `per2`, `sk3`, `per3`, `sk4`, `per4`, `sk5`, `per5`) VALUES
-(13, '200100402750', 'sk1', '55', 'sk2', '85', 'sk3', '65', 'sk4', '96', '', '');
+(17, '255699745623', 'ss1', NULL, 'ss2', NULL, 'ss3', NULL, 'ss4', NULL, 'ss5', NULL),
+(18, '200100402750', 'sk1', NULL, 'sk2', NULL, 'sk3', NULL, 'sk4', NULL, 'sk5', NULL),
+(19, '200100402755', 'Communication', NULL, 'Problem solving', NULL, 'SDLC', NULL, 'OOD', NULL, 'Programming efficiency', NULL);
 
 -- --------------------------------------------------------
 
@@ -122,7 +129,9 @@ CREATE TABLE `university` (
 --
 
 INSERT INTO `university` (`id`, `nic`, `uni1`, `f1`, `t1`, `de1`, `uni2`, `f2`, `t2`, `de2`) VALUES
-(13, '200100402750', 'ITUM', '2023-03-26', '2023-04-01', 'More details11', 'BCAS', '2023-04-09', '2023-04-22', 'More details22');
+(17, '255699745623', 'ITUM', '2023-06-04', '2023-06-10', 'More details1', 'NSBM', '2023-06-11', '2023-06-17', 'More details222'),
+(18, '200100402750', 'ITUM', '2023-06-04', '2023-06-10', 'Web Development! All I need to know in one place', 'Slitt', '2023-06-11', '2023-06-17', 'More details'),
+(19, '200100402755', 'Hallam, Birmingham', '2016-06-12', '2018-06-07', 'I have completed my Degree in Data engineering(Hons) in 2018.', 'Fordham University', '2018-06-28', '2019-07-25', 'Completed a cyber security diploma. ');
 
 -- --------------------------------------------------------
 
@@ -148,7 +157,9 @@ CREATE TABLE `work` (
 --
 
 INSERT INTO `work` (`id`, `nic`, `wo1`, `from1`, `to1`, `des1`, `wo2`, `from2`, `to2`, `des2`) VALUES
-(13, '200100402750', 'Web deleoper', '2023-05-01', '2023-05-06', 'Developer in MSODI', 'Project manager', '2023-05-14', '2023-05-20', 'More details');
+(17, '255699745623', 'Web', '2023-06-14', '2023-06-07', 'More details1', 'D', '2023-06-28', '2023-06-30', 'More details22'),
+(18, '200100402750', 'Batsman T20', '2023-06-04', '2023-06-10', 'Played well', 'Keeper', '2023-06-18', '2023-06-17', 'Caught the ball very well'),
+(19, '200100402755', 'Assistant Data Enginner', '2019-06-09', '2021-08-10', 'I worked as a Assistant Data Engineer in ALTec solutions in Newyork for 2 years. ', 'Data Engineer', '2021-08-10', '2023-12-05', 'I worked as a data engineer in \"Repub-Tech\" for 2 years. ');
 
 --
 -- Indexes for dumped tables
@@ -192,31 +203,31 @@ ALTER TABLE `work`
 -- AUTO_INCREMENT for table `language`
 --
 ALTER TABLE `language`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `skill`
 --
 ALTER TABLE `skill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `university`
 --
 ALTER TABLE `university`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `work`
 --
 ALTER TABLE `work`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
