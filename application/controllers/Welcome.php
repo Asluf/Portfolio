@@ -15,7 +15,12 @@ class Welcome extends CI_Controller
     $this->load->model('admin_model');
     $res = $this->admin_model->insertData($this->input->post());
   }
-  public function downloadPdf($id)
+  public function chooseTem($x)
+  { 
+    $data['id'] = $x;
+    $this->load->view('template',$data);
+  }
+  public function downloadPdf1($id)
   {
     $this->load->model('admin_model');
     $pers = $this->admin_model->get_personal($id);
@@ -66,15 +71,6 @@ class Welcome extends CI_Controller
               <b>Skills</b>
             </p>
             <p>" . $skill[0]['sk1'] . "</p>
-            <div style='width: 90%'>" . $skill[0]['per1'] . "</div>
-            <p>" . $skill[0]['sk2'] . "</p>
-            <div style='width: 80%'>" . $skill[0]['per2'] . "</div>
-            <p>" . $skill[0]['sk3'] . "</p>
-            <div style='width: 75%'>" . $skill[0]['per3'] . "</div>
-            <p>" . $skill[0]['sk4'] . "</p>
-            <div style='width: 50%'>" . $skill[0]['per4'] . "</div>
-            <p>" . $skill[0]['sk5'] . "</p>
-            <div style='width: 50%'>" . $skill[0]['per5'] . "</div>
 
             <br />
 
