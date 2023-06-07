@@ -30,6 +30,7 @@ class admin_model extends CI_MODEL
             "country" => $data['country'],
             "mail" => $data['mail'],
             "mobile" => $data["mobile"],
+            "about_me" => $data['about']
         );
         $skills = array(
             "nic" => $data["nic"],

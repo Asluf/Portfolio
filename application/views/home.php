@@ -151,7 +151,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<input type="text" name="mail" id="mail" size="50">
 						<br />
 						<label>Mobile:</label><br />
-						<input type="text" name="mobile" id="mobile" size="50">
+						<input type="text" name="mobile" id="mobile" size="50"><br/>
+						<textarea rows="2" cols="50" name="about" id="about">About me</textarea><br />
 
 					</fieldset>
 					<fieldset>
