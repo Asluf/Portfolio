@@ -181,9 +181,49 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	
 </body>
-<!-- Megha start -->
+
+<script>
+	$(document).ready(function() {
+		$("#generate").click(function() {
+			base_url = "<?php echo base_url(); ?>";
 
 
-<!-- Megha end -->
+			$.ajax({
+				url: base_url + 'index.php/Welcome/sendData',
+				data: $("#user_form").serialize(),
+				method: 'post',
+				success: function(response) {
+					if (response != "error") {
+						// document.getElementById('genbtn').style.display = 'block';
+
+						Swal.fire({
+							title: 'Your information has been saved! ',
+							showCancelButton: true,
+							confirmButtonText: 'Preview & Download',
+
+						}).then((result) => {
+							/* Read more about isConfirmed, isDenied below */
+							if (result.isConfirmed) {
+								// window.location = base_url + "index.php/Welcome/downloadPdf/" + response;
+								window.location = base_url + "index.php/Welcome/chooseTem/" + response;
+
+							}
+						});
+					} else {
+						alert("Something went wrong");
+					}
+
+
+				},
+				error: function() {
+					alert("Something Wrong");
+				}
+			});
+
+		});
+
+
+	});
+</script>
 
 </html>
