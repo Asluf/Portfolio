@@ -111,7 +111,26 @@ class admin_model extends CI_MODEL
         return $query->result_array();
     }
 
-    // Ishani start
     
-    // Ishani end
+     public function get_skill($data)
+    {
+        $query = $this->db->get_where('skill', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_language($data)
+    {
+        $query = $this->db->get_where('language', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_work($data)
+    {
+        $query  = $this->db->get_where('work', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_uni($data)
+    {
+        $query = $this->db->get_where('university', array('nic' => $data));
+        return $query->result_array();
+    }
+    
 }
