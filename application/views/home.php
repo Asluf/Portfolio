@@ -33,8 +33,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 		.abc {
 			padding-left: 30%;
-			/* text-align: center;
-justify-content: center; */
+			
 		}
 
 
@@ -152,9 +151,12 @@ justify-content: center; */
 
 
 		<div id="body">
-			<!-- Thewidu start -->
+			
+			<p>Creating a resume or CV can be a daunting task, but our platform makes it easy and hassle-free. Our user-friendly interface allows you to input your details and generate a professional-looking CV within minutes.</p>
 
-			<!-- Thewidu end -->
+			<code>Our platform offers a wide range of customizable templates, so you can choose the design that best suits your needs and showcases your skills and experience in the best possible way. You can also tailor your CV to specific job applications, ensuring you stand out from the crowd and increase your chances of getting hired.</code>
+			<p>Our team is dedicated to ensuring our platform remains up-to-date with the latest industry trends and requirements, so you can rest assured that your CV will meet the expectations of potential employers.</p>
+		
 
 
 
