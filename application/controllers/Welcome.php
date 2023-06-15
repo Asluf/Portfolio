@@ -19,9 +19,6 @@ class Welcome extends CI_Controller
     $data['id'] = $x;
     $this->load->view('template', $data);
   }
-  
-
-  
   public function downloadPdf1($id)
   {
     $this->load->model('admin_model');
@@ -312,6 +309,5 @@ class Welcome extends CI_Controller
 
     
   }
-  
-
 }
+?>
