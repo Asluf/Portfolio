@@ -15,9 +15,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 	<title>Create a CV</title>
-
+	<!-- Duneth -->
 	<style type="text/css">
 		form {
+			
 			margin: auto;
 			width: 850px;
 			font-size: medium;
@@ -49,7 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		}
 
 		body {
-			background-color: #406665;
+			background-color: #d6e3e3;
 			margin: 40px;
 			font: 13px/20px Arial, sans-serif;
 			font-weight: Bold;
@@ -82,7 +83,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			font-family: 'Roboto Slab', serif;
 			font-size: 18px;
 			font-weight: Extra Bold (Ultra Bold);
-			background-color: #99DBF5;
+			/* background-color: #99DBF5; */
 			border: 0px solid #D0D0D0;
 			color: #00008B;
 			display: block;
@@ -130,7 +131,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		}
 
 		#user_form {
-			background-color: #406665;
+			/* background-color: #406665; */
 			border-width: 0px;
 		}
 
@@ -142,13 +143,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body>
-
+		<!-- Nasik -->
 	<div id="container">
 		<h1 class="h1_title">
 			<center>Welcome to our CV generation platform!</center>
 		</h1>
-
-
 
 		<div id="body">
 			
@@ -305,7 +304,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
-
+<!-- Megha -->
 <script>
 	$(document).ready(function() {
 		$("#generate").click(function() {

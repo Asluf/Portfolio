@@ -3,14 +3,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Welcome extends CI_Controller
 { 
-  
+  // Ishan
   public function index()
   {
+    // Show the homepage
     $this->load->view('home');
   }
 
   public function sendData()
   {
+    // Recive the data from form and send it to model
     $this->load->model('admin_model');
     $res = $this->admin_model->insertData($this->input->post());
   }
@@ -19,9 +21,11 @@ class Welcome extends CI_Controller
     $data['id'] = $x;
     $this->load->view('template', $data);
   }
+  // Madhu
   public function downloadPdf1($id)
   {
     $this->load->model('admin_model');
+
     $pers = $this->admin_model->get_personal($id);
     $skill = $this->admin_model->get_skill($id);
     $lang = $this->admin_model->get_language($id);

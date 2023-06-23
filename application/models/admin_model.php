@@ -1,6 +1,7 @@
 <?php
 class admin_model extends CI_MODEL
 {   
+    // Asluf
     public function insertData($data)
     {   
         
@@ -104,14 +105,13 @@ class admin_model extends CI_MODEL
             echo "error";
         }
     }
-    
+    // Ishani
     public function get_personal($data)
     {
         $query = $this->db->get_where('personal', array('nic' => $data));
         return $query->result_array();
     }
 
-    
      public function get_skill($data)
     {
         $query = $this->db->get_where('skill', array('nic' => $data));
