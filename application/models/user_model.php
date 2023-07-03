@@ -1,5 +1,5 @@
 <?php
-class admin_model extends CI_MODEL
+class user_model extends CI_MODEL
 {   
     // Asluf
     public function insertData($data)

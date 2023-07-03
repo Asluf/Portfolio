@@ -73,7 +73,7 @@
 
             <div class="col-md-6 col-sm-6 col-lg-6">
                 <figure class="figure" style="justify-content: right;">
-                    <a href="<?php echo base_url();?>index.php/Welcome/downloadPdf1/<?php echo $id; ?>">
+                    <a href="<?php echo base_url();?>index.php/User/downloadPdf1">
                         <img class="x" src="<?php echo base_url(); ?>resources/images/cv1.JPG" class="figure-img img-fluid rounded" alt="Template:01">
                     </a>
                 </figure>
@@ -81,7 +81,7 @@
             </div>
             <div class="col-md-6 col-sm-6">
                 <figure class="figure">
-                    <a href="<?php echo base_url();?>index.php/Welcome/downloadPdf2/<?php echo $id; ?>">
+                    <a href="<?php echo base_url();?>index.php/User/downloadPdf2">
                         <img class="x" src="<?php echo base_url(); ?>resources/images/cv2.JPG" class="figure-img img-fluid rounded" alt="Template:01">
                     </a>
                 </figure>
