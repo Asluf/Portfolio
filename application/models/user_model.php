@@ -1,7 +1,7 @@
 <?php
 class user_model extends CI_MODEL
 {   
-    // Asluf
+    
     public function insertData($data)
     {   
         
@@ -103,6 +103,16 @@ class user_model extends CI_MODEL
             }
         }else{
             echo "error";
+        }
+    }
+    public function getCV()
+    {   
+        $data = $this->session->userdata('Nic');
+        $query = $this->db->get_where('personal', array('nic' => $data));
+        if ($query->num_rows() > 0) {
+            return true;
+        }else{
+            return false;
         }
     }
     // Ishani

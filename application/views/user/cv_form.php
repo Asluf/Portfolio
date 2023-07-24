@@ -3,21 +3,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Dancing+Script:wght@600&family=Righteous&family=Roboto+Slab:wght@800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 	<title>Create a CV</title>
-	<!-- Duneth -->
 	<style type="text/css">
 		form {
-			
+
 			margin: auto;
 			width: 850px;
 			font-size: medium;
@@ -33,7 +31,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 		.abc {
 			padding-left: 30%;
-			
+
 		}
 
 
@@ -138,27 +136,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			color: black;
 		}
 	</style>
-
 </head>
 
 <body>
-		<!-- Nasik -->
+	
 	<div id="container">
 		<h1 class="h1_title">
 			<center>Welcome to our CV generation platform!</center>
-			
 		</h1>
 
-		<div id="body">
-			
-			<p>Creating a resume or CV can be a daunting task, but our platform makes it easy and hassle-free. Our user-friendly interface allows you to input your details and generate a professional-looking CV within minutes.</p>
+		<div id="body" style="font-family:Cambria;">
+
+			<p >Creating a resume or CV can be a daunting task, but our platform makes it easy and hassle-free. Our user-friendly interface allows you to input your details and generate a professional-looking CV within minutes.</p>
 
 			<code>Our platform offers a wide range of customizable templates, so you can choose the design that best suits your needs and showcases your skills and experience in the best possible way. You can also tailor your CV to specific job applications, ensuring you stand out from the crowd and increase your chances of getting hired.</code>
 			<p>Our team is dedicated to ensuring our platform remains up-to-date with the latest industry trends and requirements, so you can rest assured that your CV will meet the expectations of potential employers.</p>
-		
-
-
-
 
 			<h1 class="h1_Form">
 				<center>FORM</center>
@@ -200,23 +192,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<label>Skill 1: </label>
 						<input class="form-control" type="text" name="sk1" id="sk1" placeholder="Skill 1" size="40">
 
-						<!-- <input type="number" name="per1" id="per1" min="0" max="100">  -->
 						<label>Skill 2: </label>
 						<input class="form-control" type="text" name="sk2" id="sk2" placeholder="Skill 2">
 
-						<!-- <input type="number" name="per2" id="per2" min="0" max="100">  -->
 						<label>Skill 3: </label>
 						<input class="form-control" type="text" name="sk3" id="sk3" placeholder="Skill 3">
 
-						<!-- <input type="number" name="per3" id="per3" min="0" max="100">  -->
 						<label>Skill 4: </label>
 						<input class="form-control" type="text" name="sk4" id="sk4" placeholder="Skill 4">
 
-						<!-- <input type="number" name="per4" id="per4" min="0" max="100">  -->
 						<label>Skill 5: </label>
 						<input class="form-control" type="text" name="sk5" id="sk5" placeholder="Skill 5">
 
-						<!-- <input type="number" name="per5" id="per5" min="0" max="100">  -->
 						<br /><br />
 						<legend>Languages</legend>
 

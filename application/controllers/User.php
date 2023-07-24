@@ -6,7 +6,20 @@ class User extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('Role') == 'user' && $this->session->userdata('Nic') != '') {
-            $this->load->view('user/dashboard');
+            $this->load->model('user_model');
+            $res = $this->user_model->getCV();
+            if ($res) {
+                $id = $this->session->userdata('Nic');
+                $data['pers'] = $this->user_model->get_personal($id);
+                $data['skill'] = $this->user_model->get_skill($id);
+                $data['lang'] = $this->user_model->get_language($id);
+                $data['work'] = $this->user_model->get_work($id);
+                $data['uni'] = $this->user_model->get_uni($id);
+                $this->load->view('user/dashboard',$data);
+            }else{
+                $this->load->view('user/emptydashboard');
+            }
+            
         } else {
             redirect(base_url() . 'index.php/Welcome/login');
         }
@@ -328,33 +341,6 @@ class User extends CI_Controller
         $pdf->Output('example_007.pdf', 'I');
     }
 
-    public function profile()
-    {
-        if ($this->session->userdata('Role') == 'user') {
-
-            $this->load->model('user_model');
-            $data['province'] = $this->user_model->getprovince();
-
-
-            $customerid = $this->session->userdata('Id');
-            $this->load->model('user_model');
-            $data['profile'] = $this->user_model->getprofile($customerid);
-
-
-            $this->load->view('customer/profile', $data);
-        } else {
-            redirect(base_url() . 'index.php/Welcome/login');
-        }
-    }
-    public function editprofile()
-    {
-        if ($this->session->userdata('Role') == 'user') {
-            $this->load->model('user_model');
-            $res = $this->user_model->editprofile($this->input->post());
-        } else {
-            redirect(base_url() . 'index.php/Welcome/login');
-        }
-    }
     public function logout()
     {
         $this->session->unset_userdata('Email');
