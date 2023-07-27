@@ -7,9 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Dancing+Script:wght@600&family=Righteous&family=Roboto+Slab:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>User Home Page</title>
     <style type="text/css">
         form {
@@ -134,14 +132,45 @@
             color: black;
         }
     </style>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>resources/bootstrap/css/bootstrap.min.css">
+    <script src="<?php echo base_url(); ?>resources/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        ul {
+            display: flex;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+
+
+        .head {
+            font-family: Bebas-Neue;
+        }
+        nav{
+            background: rgba(40,57,101,.9);
+        }
+    </style>
 </head>
 
 <body>
-    <button><a href="http://localhost/Portfolio/index.php/User/createNew">create new</a></button>
-    <button><a href="http://localhost/Portfolio/index.php/User/logout">Logout</a></button>
-    <h1>Home page</h1>
-
-    Small introduction
+    <nav class="navbar navbar-expand-lg text-left row fixed-top" style="max-height: 60px;">
+        <div class="h3 float-left text-light mx-3 col-md-9">CVFolio</div>
+        <ul class="float-right col-md-3 mt-2">
+            <li><a href="http://localhost/Portfolio/index.php/User/createNew" class=" btn btn-warning text-dark btn-outline-light btn-md">CREATE NEW</a></li>
+            <li><a href="http://localhost/Portfolio/index.php/User/logout" class=" btn btn-warning text-dark btn-outline-light btn-md">LOGOUT</a></li>
+        </ul>
+    </nav>
+    
+    <h1 class="text-center" style="margin-top: 100px;">DASHBOARD</h1>
     <div>
         <form id="user_form" name="user_form" class="form-control">
             <div class="ab">

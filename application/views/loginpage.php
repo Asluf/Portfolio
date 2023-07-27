@@ -8,22 +8,81 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>resources/js/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>resources/css/css/loginpg.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>resources/bootstrap/css/bootstrap.min.css">
+    <script src="<?php echo base_url(); ?>resources/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        ul {
+            display: flex;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+
+
+        .head {
+            font-family: Bebas-Neue;
+        }
+
+        nav {
+            background: rgba(40, 57, 101, .9);
+        }
+    </style>
 
 </head>
 
 <body>
-    <button><a href="http://localhost/Portfolio/index.php/Welcome/index">Home</a></button>
-    <button><a href="http://localhost/Portfolio/index.php/Welcome/registration">Registration</a></button>
 
-    <h1>Login Page</h1>
-    <form id="login_form" name="login_form">
-        <label>Username: </label>
-        <input type="text" required name="username" id="username" />
-        <br />
-        <label>Password: </label>
-        <input type="password" required name="password" id="password" />
-        <input type="button" name="LoginBtn" id="LoginBtn" value="LOGIN">
-    </form>
+    <nav class="navbar navbar-expand-lg  text-left row" style="max-height: 60px;">
+        <div class="h2 float-left text-light mx-3 col-md-10">CVFolio</div>
+        <ul class="float-right col-md-2 mt-2">
+            <li><a href="http://localhost/Portfolio/index.php/Welcome/registration" class="btn btn-warning text-dark btn-outline-light btn-md">REGISTRATION</a></li>
+        </ul>
+    </nav>
+    <div class="main-container">
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+                <div class="login-form">
+                    <form class="sign-in-htm" id="login_form" name="login_form">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input type="text" class="input" required name="username" id="username" />
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input type="password" class="input" required name="password" id="password" />
+                        </div>
+                        <div class="group">
+                            <input id="check" type="checkbox" class="check" checked>
+                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                        </div>
+                        <div class="group">
+                            <input type="button" name="LoginBtn" id="LoginBtn" value="Sign In" class="button" />
+
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <a href="#forgot">Forgot Password?</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <script>
         $(document).ready(function() {
             function formValid() {

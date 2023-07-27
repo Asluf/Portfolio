@@ -8,9 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Dancing+Script:wght@600&family=Righteous&family=Roboto+Slab:wght@800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
 	<title>Create a CV</title>
 	<style type="text/css">
@@ -136,24 +134,53 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			color: black;
 		}
 	</style>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>resources/bootstrap/css/bootstrap.min.css">
+	<script src="<?php echo base_url(); ?>resources/bootstrap/js/bootstrap.min.js"></script>
+	<style>
+		ul {
+			display: flex;
+		}
+
+		ul li {
+			list-style: none;
+			display: inline-block;
+			margin: 0 20px;
+		}
+
+		.navbar ul li a {
+			text-decoration: none;
+			color: white;
+			text-transform: uppercase;
+		}
+
+
+		.head {
+			font-family: Bebas-Neue;
+		}
+		nav{
+            background: rgba(40,57,101,.9);
+        }
+	</style>
 </head>
 
 <body>
-	
+
 	<div id="container">
-		<h1 class="h1_title">
+		<nav class="navbar navbar-expand-lg text-left row fixed-top" style="max-height: 60px;">
+			<div class="h2 float-left text-light mx-3 col-md-9">CVFolio</div>
+			<ul class="float-right col-md-3 mt-2">
+				<li><a href="http://localhost/Portfolio/index.php/User/index" class=" btn btn-warning text-dark btn-outline-light btn-md">DASHBOARD</a></li>
+				<li><a href="http://localhost/Portfolio/index.php/User/logout" class=" btn btn-warning text-dark btn-outline-light btn-md">LOGOUT</a></li>
+			</ul>
+		</nav>
+		<h1 class="h1_title" style="margin-top: 100px;">
 			<center>Welcome to our CV generation platform!</center>
 		</h1>
 
 		<div id="body" style="font-family:Cambria;">
 
-			<p >Creating a resume or CV can be a daunting task, but our platform makes it easy and hassle-free. Our user-friendly interface allows you to input your details and generate a professional-looking CV within minutes.</p>
-
-			<code>Our platform offers a wide range of customizable templates, so you can choose the design that best suits your needs and showcases your skills and experience in the best possible way. You can also tailor your CV to specific job applications, ensuring you stand out from the crowd and increase your chances of getting hired.</code>
-			<p>Our team is dedicated to ensuring our platform remains up-to-date with the latest industry trends and requirements, so you can rest assured that your CV will meet the expectations of potential employers.</p>
-
 			<h1 class="h1_Form">
-				<center>FORM</center>
+				<center>CREAT A NEW CV</center>
 			</h1>
 			<form id="user_form" name="user_form" class="form-control">
 				<div class="ab">
@@ -291,7 +318,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
-<!-- Megha -->
+
 <script>
 	$(document).ready(function() {
 		$("#generate").click(function() {

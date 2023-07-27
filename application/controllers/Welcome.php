@@ -7,7 +7,11 @@ class Welcome extends CI_Controller
 	// Email(username), Nic, Role have to be taken as session vars
 	public function index()
 	{
-		$this->load->view('home');
+		// $this->load->view('home');
+		if ($this->session->userdata('Email' != '')) {
+			redirect(base_url() . 'index.php/Welcome/logout');
+		}
+		$this->load->view('loginpage');
 	}
 	public function registration()
 	{
@@ -20,7 +24,6 @@ class Welcome extends CI_Controller
 	{
 		$this->load->model('welcome_model');
 		$res = $this->welcome_model->register($this->input->post());
-		
 	}
 	public function login()
 	{
