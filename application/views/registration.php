@@ -43,7 +43,7 @@
     <nav class="navbar navbar-expand-lg text-left row" style="max-height: 60px;">
         <div class="h2 float-left text-light mx-3 col-md-10">CVFolio</div>
         <ul class="float-right col-md-2 mt-2">
-            <li><a href="http://localhost/Portfolio/index.php/Welcome/login" class=" btn btn-warning text-dark btn-outline-light btn-md">LOGIN</a></li>
+            <li><a href="http://localhost/Portfolio/index.php/Welcome/login" class="btn btn-warning text-dark btn-outline-light btn-md">LOGIN</a></li>
         </ul>
     </nav>
 

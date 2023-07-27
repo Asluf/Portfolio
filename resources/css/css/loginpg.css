@@ -97,7 +97,7 @@ a {
 .login-form .group .input,
 .login-form .group .button {
 	width: 100%;
-	color: #000000;
+	color: #fff;
 	display: block;
 }
 .login-form .group .input,
@@ -105,7 +105,7 @@ a {
 	border: none;
 	padding: 15px 20px;
 	border-radius: 25px;
-	/* background:rgba(255,255,255,.1); */
+	background:rgba(255,255,255,.1);
 }
 .login-form .group input[data-type="password"] {
 	text-security: circle;
@@ -116,7 +116,15 @@ a {
 	font-size: 12px;
 }
 .login-form .group .button {
-	background: #1161ee;
+	background: orange;
+}
+.login-form .group .button :hover {
+	background: #fff;
+	color: #000000;
+}
+.login-form .group .button :focus {
+	background: #fff;
+	color: #000000;
 }
 .login-form .group label .icon {
 	width: 15px;
