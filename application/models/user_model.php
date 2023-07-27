@@ -1,6 +1,7 @@
 <?php
-class admin_model extends CI_MODEL
+class user_model extends CI_MODEL
 {   
+    
     public function insertData($data)
     {   
         
@@ -104,14 +105,42 @@ class admin_model extends CI_MODEL
             echo "error";
         }
     }
-    
+    public function getCV()
+    {   
+        $data = $this->session->userdata('Nic');
+        $query = $this->db->get_where('personal', array('nic' => $data));
+        if ($query->num_rows() > 0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    // Ishani
     public function get_personal($data)
     {
         $query = $this->db->get_where('personal', array('nic' => $data));
         return $query->result_array();
     }
 
-    // Ishani start
+     public function get_skill($data)
+    {
+        $query = $this->db->get_where('skill', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_language($data)
+    {
+        $query = $this->db->get_where('language', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_work($data)
+    {
+        $query  = $this->db->get_where('work', array('nic' => $data));
+        return $query->result_array();
+    }
+    public function get_uni($data)
+    {
+        $query = $this->db->get_where('university', array('nic' => $data));
+        return $query->result_array();
+    }
     
-    // Ishani end
 }
