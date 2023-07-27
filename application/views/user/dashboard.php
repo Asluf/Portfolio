@@ -140,15 +140,8 @@
     <button><a href="http://localhost/Portfolio/index.php/User/createNew">create new</a></button>
     <button><a href="http://localhost/Portfolio/index.php/User/logout">Logout</a></button>
     <h1>Home page</h1>
-    <h2>
-        <?php echo $this->session->userdata('Nic'); ?>
-    </h2>
+
     Small introduction
-    <?php var_dump($pers); ?>
-    <?php var_dump($skill); ?>
-    <?php var_dump($lang); ?>
-    <?php var_dump($work); ?>
-    <?php var_dump($uni); ?>
     <div>
         <form id="user_form" name="user_form" class="form-control">
             <div class="ab">
@@ -184,31 +177,31 @@
                     <legend>Skills (max 5)</legend>
 
                     <label>Skill 1: </label>
-                    <input class="form-control" type="text" name="sk1" id="sk1" placeholder="Skill 1" size="40">
+                    <input class="form-control" type="text" name="sk1" id="sk1" placeholder="Skill 1" size="40" value="<?php echo $skill[0]['sk1']; ?>" />
 
                     <label>Skill 2: </label>
-                    <input class="form-control" type="text" name="sk2" id="sk2" placeholder="Skill 2">
+                    <input class="form-control" type="text" name="sk2" id="sk2" placeholder="Skill 2" value="<?php echo $skill[0]['sk2']; ?>" />
 
                     <label>Skill 3: </label>
-                    <input class="form-control" type="text" name="sk3" id="sk3" placeholder="Skill 3">
+                    <input class="form-control" type="text" name="sk3" id="sk3" placeholder="Skill 3" value="<?php echo $skill[0]['sk3']; ?>" />
 
                     <label>Skill 4: </label>
-                    <input class="form-control" type="text" name="sk4" id="sk4" placeholder="Skill 4">
+                    <input class="form-control" type="text" name="sk4" id="sk4" placeholder="Skill 4" value="<?php echo $skill[0]['sk4']; ?>" />
 
                     <label>Skill 5: </label>
-                    <input class="form-control" type="text" name="sk5" id="sk5" placeholder="Skill 5">
+                    <input class="form-control" type="text" name="sk5" id="sk5" placeholder="Skill 5" value="<?php echo $skill[0]['sk5']; ?>" />
 
                     <br /><br />
                     <legend>Languages</legend>
 
                     <label>Language 1: </label>
-                    <input class="form-control" type="text" name="la1" id="la1" placeholder="Language 1">
+                    <input class="form-control" type="text" name="la1" id="la1" placeholder="Language 1" value="<?php echo $lang[0]['la1']; ?>" />
 
                     <label>Language 2: </label>
-                    <input class="form-control" type="text" name="la2" id="la2" placeholder="Language 2">
+                    <input class="form-control" type="text" name="la2" id="la2" placeholder="Language 2" value="<?php echo $lang[0]['la2']; ?>" />
 
                     <label>Language 3: </label>
-                    <input class="form-control" type="text" name="la3" id="la3" placeholder="Language 3">
+                    <input class="form-control" type="text" name="la3" id="la3" placeholder="Language 3" value="<?php echo $lang[0]['la3']; ?>" />
                 </fieldset>
 
 
@@ -221,24 +214,24 @@
 
                     <div>
                         <label>Title: </label>
-                        <input class="form-control" type="text" name="wo1" id="wo1" placeholder="Ex: Web developer">
+                        <input class="form-control" type="text" name="wo1" id="wo1" placeholder="Ex: Web developer" value="<?php echo $work[0]['wo1']; ?>" />
                         <label>From: </label>
-                        <input class="form-control" type="date" name="from1" id="from1">
+                        <input class="form-control" type="date" name="from1" id="from1" value="<?php echo $work[0]['from1']; ?>" />
                         <label>To: </label>
-                        <input class="form-control" type="date" name="to1" id="to1">
+                        <input class="form-control" type="date" name="to1" id="to1" value="<?php echo $work[0]['to1']; ?>" />
                         <label>Description: </label>
-                        <textarea class="form-control" rows="2" cols="50" name="des1" id="des1">More details</textarea> <br />
+                        <textarea class="form-control" rows="2" cols="50" name="des1" id="des1"><?php echo $work[0]['des1']; ?></textarea> <br />
                     </div>
                     <hr />
                     <div>
                         <label>Title: </label>
-                        <input class="form-control" type="text" name="wo2" id="wo2" placeholder="Ex: Web developer">
+                        <input class="form-control" type="text" name="wo2" id="wo2" placeholder="Ex: Web developer" value="<?php echo $work[0]['wo2']; ?>" />
                         <label>From: </label>
-                        <input class="form-control" type="date" name="from2" id="from2">
+                        <input class="form-control" type="date" name="from2" id="from2" value="<?php echo $work[0]['from2']; ?>" />
                         <label>To: </label>
-                        <input class="form-control" type="date" name="to2" id="to2">
+                        <input class="form-control" type="date" name="to2" id="to2" value="<?php echo $work[0]['to2']; ?>" />
                         <label>Description: </label>
-                        <textarea class="form-control" rows="2" cols="50" name="des2" id="des2">More details</textarea>
+                        <textarea class="form-control" rows="2" cols="50" name="des2" id="des2"><?php echo $work[0]['des2']; ?></textarea>
                     </div>
                 </fieldset>
                 <fieldset style="margin-left: 50px;">
@@ -246,24 +239,24 @@
 
                     <div>
                         <label>University, College, School: </label>
-                        <input class="form-control" type="text" name="uni1" id="uni1" placeholder="Ex: ITUM">
+                        <input class="form-control" type="text" name="uni1" id="uni1" placeholder="Ex: ITUM" value="<?php echo $uni[0]['uni1']; ?>" />
                         <label>From: </label>
-                        <input class="form-control" type="date" name="f1" id="f1">
+                        <input class="form-control" type="date" name="f1" id="f1" value="<?php echo $uni[0]['f1']; ?>" />
                         <label>To: </label>
-                        <input class="form-control" type="date" name="t1" id="t1">
+                        <input class="form-control" type="date" name="t1" id="t1" value="<?php echo $uni[0]['t1']; ?>" />
                         <label>Description: </label>
-                        <textarea class="form-control" rows="2" cols="50" name="de1" id="de1">More details</textarea> <br />
+                        <textarea class="form-control" rows="2" cols="50" name="de1" id="de1"><?php echo $uni[0]['de1']; ?></textarea> <br />
                     </div>
                     <hr />
                     <div>
                         <label>University, College, School: </label>
-                        <input class="form-control" type="text" name="uni2" id="uni2" placeholder="Ex: ITUM">
+                        <input class="form-control" type="text" name="uni2" id="uni2" placeholder="Ex: ITUM" value="<?php echo $uni[0]['uni2']; ?>" />
                         <label>From: </label>
-                        <input class="form-control" type="date" name="f2" id="f2">
+                        <input class="form-control" type="date" name="f2" id="f2" value="<?php echo $uni[0]['f2']; ?>" />
                         <label>To: </label>
-                        <input class="form-control" type="date" name="t2" id="t2">
+                        <input class="form-control" type="date" name="t2" id="t2" value="<?php echo $uni[0]['t2']; ?>" />
                         <label>Description: </label>
-                        <textarea class="form-control" rows="2" cols="50" name="de2" id="de2">More details</textarea>
+                        <textarea class="form-control" rows="2" cols="50" name="de2" id="de2"><?php echo $uni[0]['de2']; ?></textarea>
                     </div>
                 </fieldset>
             </div>
@@ -278,5 +271,48 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
+<script>
+    $(document).ready(function() {
+        $("#generate").click(function() {
+            base_url = "<?php echo base_url(); ?>";
+
+
+            $.ajax({
+                url: base_url + 'index.php/User/sendData',
+                data: $("#user_form").serialize(),
+                method: 'post',
+                success: function(response) {
+                    if (response != "error") {
+                        // document.getElementById('genbtn').style.display = 'block';
+
+                        Swal.fire({
+                            title: 'Your information has been changed! ',
+                            showCancelButton: true,
+                            confirmButtonText: 'Preview & Download',
+
+                        }).then((result) => {
+                            /* Read more about isConfirmed, isDenied below */
+                            if (result.isConfirmed) {
+                                // window.location = base_url + "index.php/User/downloadPdf/" + response;
+                                window.location = base_url + "index.php/User/chooseTem";
+
+                            }
+                        });
+                    } else {
+                        alert("Something went wrong");
+                    }
+
+
+                },
+                error: function() {
+                    alert("Something Wrong");
+                }
+            });
+
+        });
+
+
+    });
+</script>
 
 </html>

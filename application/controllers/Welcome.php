@@ -16,6 +16,12 @@ class Welcome extends CI_Controller
 		}
 		$this->load->view('registration');
 	}
+	public function register()
+	{
+		$this->load->model('welcome_model');
+		$res = $this->welcome_model->register($this->input->post());
+		
+	}
 	public function login()
 	{
 		if ($this->session->userdata('Email' != '')) {

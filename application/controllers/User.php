@@ -41,10 +41,11 @@ class User extends CI_Controller
             redirect(base_url() . 'index.php/Welcome/login');
         }
     }
+  
     public function chooseTem()
     {
         if ($this->session->userdata('Role') == 'user' && $this->session->userdata('Nic') != '') {
-            $this->load->view('template');
+            $this->load->view('user/template');
         } else {
             redirect(base_url() . 'index.php/Welcome/login');
         }
